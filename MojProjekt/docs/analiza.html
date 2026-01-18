@@ -37,6 +37,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet" />
 
 <link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/main/img/reproducible.png">
 <!-- Add a small amount of space between sections. -->
@@ -344,7 +346,13 @@ div.tocify {
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/98438-svg&#10;/RstudioProjekt">
+    <span class="fab fa-github"></span>
+     
+    Source code
+  </a>
+</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -364,7 +372,7 @@ div.tocify {
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
 <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger"
+workflowr <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span>
 </button>
 </p>
@@ -375,8 +383,8 @@ aria-hidden="true"></span>
 </li>
 <li>
 <a data-toggle="tab" href="#checks"> Checks <span
-class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> </a>
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+</a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -389,9 +397,9 @@ aria-hidden="true"></span> </a>
 </p>
 <p>
 <strong>Checks:</strong> <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7
 <span class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> 1
+aria-hidden="true"></span> 0
 </p>
 <p>
 <strong>Knit directory:</strong> <code>MojProjekt/</code> <span
@@ -414,21 +422,18 @@ versions</em> tab lists the development history.
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges">
-<span class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted
-changes </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date
+</a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguncommittedchanges"
+<div id="strongRMarkdownfilestronguptodate"
 class="panel-collapse collapse">
 <div class="panel-body">
-<p>The R Markdown is untracked by Git. To know which version of the R
-Markdown file created these results, you’ll want to first commit it to
-the Git repo. If you’re still working on the analysis, you can ignore
-this warning. When you’re finished, you can run
-<code>wflow_publish</code> to commit the R Markdown file and build the
-HTML.</p>
+<p>Great! Since the R Markdown file has been committed to the Git
+repository, you know the exact version of the code that produced these
+results.</p>
 </div>
 </div>
 </div>
@@ -519,13 +524,15 @@ project makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrong516e7cf">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcom98438svgRstudioProjekttree42b0a2129850219f0d610fbde12b67f11aa76726targetblank42b0a21a">
 <span class="glyphicon glyphicon-ok text-success"
-aria-hidden="true"></span> <strong>Repository version:</strong> 516e7cf
+aria-hidden="true"></span> <strong>Repository version:</strong>
+<a href="https://github.com/98438-svg/RstudioProjekt/tree/42b0a2129850219f0d610fbde12b67f11aa76726" target="_blank">42b0a21</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrong516e7cf"
+<div
+id="strongRepositoryversionstrongahrefhttpsgithubcom98438svgRstudioProjekttree42b0a2129850219f0d610fbde12b67f11aa76726targetblank42b0a21a"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -534,7 +541,8 @@ and connecting the code version to the results is critical for
 reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version 516e7cf.
+The results in this page were generated with repository version
+<a href="https://github.com/98438-svg/RstudioProjekt/tree/42b0a2129850219f0d610fbde12b67f11aa76726" target="_blank">42b0a21</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -549,22 +557,34 @@ were generated:
 </p>
 <pre><code>
 Ignored files:
-    Ignored:    .Rhistory
-    Ignored:    .Rproj.user/
-    Ignored:    analysis/COLLEGIUM MAXIMUM.png
+    Ignored:    .Rproj.user/E00D57FF/bibliography-index/
+    Ignored:    .Rproj.user/E00D57FF/ctx/
+    Ignored:    .Rproj.user/E00D57FF/explorer-cache/
+    Ignored:    .Rproj.user/E00D57FF/jobs/
+    Ignored:    .Rproj.user/E00D57FF/presentation/
+    Ignored:    .Rproj.user/E00D57FF/profiles-cache/
+    Ignored:    .Rproj.user/E00D57FF/sources/per/
+    Ignored:    .Rproj.user/E00D57FF/sources/session-91ddb135/
+    Ignored:    .Rproj.user/E00D57FF/tutorial/
+    Ignored:    .Rproj.user/E00D57FF/unsaved-notebooks/
+    Ignored:    .Rproj.user/E00D57FF/viewer-cache/
+    Ignored:    MojProjekt/.Rhistory
+    Ignored:    MojProjekt/.Rproj.user/
+    Ignored:    MojProjekt/analysis/COLLEGIUM MAXIMUM.png
 
 Untracked files:
-    Untracked:  analysis/COLLEGIUM MAXIMUM.jpg
-    Untracked:  analysis/analiza.Rmd
-    Untracked:  analysis/cv.Rmd
-    Untracked:  analysis/koszykówka.jpg
-    Untracked:  analysis/prezentacja.qmd
-    Untracked:  analysis/rower.jpg
-    Untracked:  analysis/siłownia.jpg
+    Untracked:  .gitignore
 
 Unstaged changes:
-    Modified:   analysis/_site.yml
-    Modified:   analysis/index.Rmd
+    Modified:   .Rproj.user/E00D57FF/pcs/files-pane.pper
+    Modified:   .Rproj.user/E00D57FF/pcs/source-pane.pper
+    Modified:   .Rproj.user/E00D57FF/pcs/windowlayoutstate.pper
+    Modified:   .Rproj.user/E00D57FF/sources/prop/INDEX
+    Deleted:    .Rproj.user/E00D57FF/sources/session-3a65b8d8/A2DD2ECC
+    Deleted:    .Rproj.user/E00D57FF/sources/session-3a65b8d8/A2DD2ECC-contents
+    Deleted:    .Rproj.user/E00D57FF/sources/session-3a65b8d8/FFB5478D
+    Deleted:    .Rproj.user/E00D57FF/sources/session-3a65b8d8/FFB5478D-contents
+    Deleted:    .Rproj.user/E00D57FF/sources/session-3a65b8d8/lock_file
 
 </code></pre>
 <p>
@@ -579,10 +599,74 @@ have uncommitted changes.
 <hr>
 </div>
 <div id="versions" class="tab-pane fade">
+
 <p>
-There are no past versions. Publish this analysis with
-<code>wflow_publish()</code> to start tracking its development.
+These are the previous versions of the repository in which changes were
+made to the R Markdown (<code>MojProjekt/analysis/analiza.Rmd</code>)
+and HTML (<code>MojProjekt/docs/analiza.html</code>) files. If you’ve
+configured a remote Git repository (see <code>?wflow_git_remote</code>),
+click on the hyperlinks in the table below to view the files as they
+were in that past version.
 </p>
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+File
+</th>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+<th>
+Message
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/98438-svg/RstudioProjekt/blob/42b0a2129850219f0d610fbde12b67f11aa76726/MojProjekt/analysis/analiza.Rmd" target="_blank">42b0a21</a>
+</td>
+<td>
+98438-svg”
+</td>
+<td>
+2026-01-18
+</td>
+<td>
+Naprawa zagnieżdżonego folderu
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/98438-svg/RstudioProjekt/42b0a2129850219f0d610fbde12b67f11aa76726/MojProjekt/docs/analiza.html" target="_blank">42b0a21</a>
+</td>
+<td>
+98438-svg”
+</td>
+<td>
+2026-01-18
+</td>
+<td>
+Naprawa zagnieżdżonego folderu
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr>
 </div>
 </div>
@@ -685,8 +769,45 @@ kable(dane_roczne, caption = &quot;Tabela: Średnia waga (kg) w poszczególnych 
   ) +
   theme_minimal() +
   theme(legend.position = &quot;none&quot;) # Ukrywam legendę, bo nazwy są na osi X</code></pre>
-<p><img src="figure/analiza.Rmd/unnamed-chunk-2-1.png" alt="" width="672" style="display: block; margin: auto;" />
-Najliczniejszą grupą w zbiorze jest gatunek Adelie (słupek czerwony),
+<p><img src="figure/analiza.Rmd/unnamed-chunk-2-1.png" alt="" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-2-1">
+Past versions of unnamed-chunk-2-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-2-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/98438-svg/RstudioProjekt/blob/42b0a2129850219f0d610fbde12b67f11aa76726/MojProjekt/docs/figure/analiza.Rmd/unnamed-chunk-2-1.png" target="_blank">42b0a21</a>
+</td>
+<td>
+98438-svg”
+</td>
+<td>
+2026-01-18
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Najliczniejszą grupą w zbiorze jest gatunek Adelie (słupek czerwony),
 liczący ponad 150 osobników. Najmniej licznym gatunkiem jest
 Chinstrap.</p>
 </div>
@@ -708,11 +829,48 @@ Chinstrap.</p>
 This warning is displayed once every 8 hours.
 Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
 generated.</code></pre>
-<p><img src="figure/analiza.Rmd/unnamed-chunk-3-1.png" alt="" width="672" style="display: block; margin: auto;" />
-Masa ciała pingwinów jest stosunkowo stabilna w czasie. Wyraźnie widać,
-że gatunek Gentoo (niebieska linia) jest znacznie cięższy od pozostałych
-(średnio ok. 5 kg), podczas gdy Adelie i Chinstrap ważą średnio poniżej
-4 kg.</p>
+<p><img src="figure/analiza.Rmd/unnamed-chunk-3-1.png" alt="" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-3-1">
+Past versions of unnamed-chunk-3-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-3-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/98438-svg/RstudioProjekt/blob/42b0a2129850219f0d610fbde12b67f11aa76726/MojProjekt/docs/figure/analiza.Rmd/unnamed-chunk-3-1.png" target="_blank">42b0a21</a>
+</td>
+<td>
+98438-svg”
+</td>
+<td>
+2026-01-18
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Masa ciała pingwinów jest stosunkowo stabilna w czasie. Wyraźnie
+widać, że gatunek Gentoo (niebieska linia) jest znacznie cięższy od
+pozostałych (średnio ok. 5 kg), podczas gdy Adelie i Chinstrap ważą
+średnio poniżej 4 kg.</p>
 </div>
 <div id="boxplot" class="section level3">
 <h3>Boxplot</h3>
@@ -727,11 +885,48 @@ Masa ciała pingwinów jest stosunkowo stabilna w czasie. Wyraźnie widać,
     fill = &quot;Gatunek&quot;
   ) +
   theme_minimal()</code></pre>
-<p><img src="figure/analiza.Rmd/unnamed-chunk-4-1.png" alt="" width="672" style="display: block; margin: auto;" />
-Boxplot potwierdza różnice w wadze. Mediana dla gatunku Gentoo (pozioma
-kreska wewnątrz niebieskiego pudełka) znajduje się znacznie wyżej niż
-dla pozostałych. Wysokość czerwonego i zielonego “pudełeka” jest
-zbliżona, co sugeruje podobne zróżnicowanie wagi.</p>
+<p><img src="figure/analiza.Rmd/unnamed-chunk-4-1.png" alt="" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-4-1">
+Past versions of unnamed-chunk-4-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-4-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/98438-svg/RstudioProjekt/blob/42b0a2129850219f0d610fbde12b67f11aa76726/MojProjekt/docs/figure/analiza.Rmd/unnamed-chunk-4-1.png" target="_blank">42b0a21</a>
+</td>
+<td>
+98438-svg”
+</td>
+<td>
+2026-01-18
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Boxplot potwierdza różnice w wadze. Mediana dla gatunku Gentoo
+(pozioma kreska wewnątrz niebieskiego pudełka) znajduje się znacznie
+wyżej niż dla pozostałych. Wysokość czerwonego i zielonego “pudełeka”
+jest zbliżona, co sugeruje podobne zróżnicowanie wagi.</p>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
