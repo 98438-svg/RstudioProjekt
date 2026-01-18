@@ -1,0 +1,113 @@
+---
+title: "Zainteresowania"
+author: "Michał Knopers"
+format: 
+  revealjs:
+    theme: moon
+    transition: slide
+    embed-resources: true
+editor: source
+---
+
+## O mnie
+
+Cześć! W tej prezentacji opowiem o tym, jak spędzam wolny czas. Sport to dla mnie sposób na zdrowie i relaks.
+
+**Moje główne zainteresowania to:**
+
+1.  Siłownia (Trening siłowy)
+2.  Koszykówka (Gra zespołowa)
+3.  Jazda na rowerze (Cardio)
+
+## Pasja 1: Siłownia
+
+Trening siłowy uczy mnie dyscypliny i konsekwencji. Staram się trenować 3-4 razy w tygodniu.
+
+![](siłownia.jpg)
+
+## Mój progres (Wykres R)
+
+Poniższy wykres liniowy pokazuje mój progres w wyciskaniu na klatkę piersiową.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-width: 10
+#| fig-height: 5
+
+library(ggplot2)
+
+# Dane
+dane_silownia <- data.frame(
+  Miesiac = c("Styczeń", "Luty", "Marzec", "Kwiecień", "Maj"),
+  Ciezar = c(60, 65, 70, 75, 80)
+)
+dane_silownia$Miesiac <- factor(dane_silownia$Miesiac, levels = dane_silownia$Miesiac) #Sortowanie miesięcy po kolei
+
+# Wykres
+ggplot(dane_silownia, aes(x = Miesiac, y = Ciezar, group = 1)) +
+  geom_line(color = "cyan", size = 2) +
+  geom_point(size = 4, color = "white") +
+  labs(title = "Progres w wyciskaniu", y = "Ciężar (kg)") +
+  theme_dark()
+```
+
+## Pasja 2: Koszykówka
+
+Koszykówka to dla mnie nie tylko sport, ale też rywalizacja i praca zespołowa.
+
+![](koszykówka.jpg)
+
+## Wykres słupkowy pokazujący liczbę punktów, które zdobyłem w ostatnich 4 meczach ze znajomymi.
+
+```{r}
+#| echo: false
+library(ggplot2)
+
+dane_kosz <- data.frame(
+  Mecz = c("Mecz 1", "Mecz 2", "Mecz 3", "Mecz 4"),
+  Punkty = c(12, 8, 22, 15)
+)
+
+ggplot(dane_kosz, aes(x = Mecz, y = Punkty, fill = Mecz)) +
+  geom_col() +
+  scale_fill_brewer(palette = "Oranges") +
+  labs(title = "Punkty zdobyte w ostatnich meczach", y = "Liczba punktów") +
+  theme_dark() +
+  theme(legend.position = "none")
+```
+
+## Pasja 3: Jazda rowerem
+
+Rower to dla mnie idealny sposób na szybki trening. Preferuję krótsze, ale intensywne trasy w mojej okolicy.
+
+![](rower.jpg)
+
+## Krótkie trasy a spalanie
+
+Wykres pokazuje zależność spalonych kalorii na dystansach od 2 do 20 km.
+
+```{r}
+#| echo: false
+library(ggplot2)
+
+dane_rower <- data.frame(
+  Dystans_km = c(2, 5, 8, 12, 16, 20),
+  Kalorie = c(60, 150, 240, 360, 480, 600)
+)
+
+ggplot(dane_rower, aes(x = Dystans_km, y = Kalorie)) +
+  geom_point(color = "lightgreen", size = 6) +
+  geom_smooth(method = "lm", se = FALSE, color = "white", linetype = "dashed") +
+  labs(title = "Spalone kalorie vs Dystans", x = "Dystans (km)", y = "Kalorie (kcal)") +
+  theme_dark()
+```
+
+## Podsumowanie
+
+Sport daje mi energię do nauki i pracy.
+
+"Sport to zdrowie"
+
+Dziękuję za uwagę!

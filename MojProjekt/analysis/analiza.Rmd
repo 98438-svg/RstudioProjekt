@@ -1,0 +1,84 @@
+---
+title: "Analiza danych"
+author: "Michał Knopers"
+date: "2026-01-17"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+## 1. Opis zbioru danych
+Analiza dotyczy zbioru `palmerpenguins`. Zawiera on dane o wymiarach (dziób, płetwa) i masie trzech gatunków pingwinów.
+ 
+```{r setup, message=FALSE, warning=FALSE}
+library(dplyr) #analiza danych
+library(ggplot2) #wykresy
+library(tidyr)  #czyszczenie(usuwanie pustych wierszy)
+library(palmerpenguins) #dane
+library(knitr) # Tabela (kable)
+data("penguins")
+```
+## 2. Przetwarzanie danych dplyr
+```{r}
+# Średnia waga gatunków w podziale na lata
+dane_roczne <- penguins %>%
+  drop_na() %>%   # Usuwam puste wiersze
+  filter(year >= 2007) %>% # Filtracja: dane od roku 2007
+  mutate(waga_kg = body_mass_g / 1000) %>%  # Mutate: zamiana gramów na kilogramy
+  group_by(year, species) %>%  # Grupowanie: po roku i gatunku
+  summarise(  # Summarise: obliczanie średniej
+    srednia_waga = mean(waga_kg),
+    .groups = "drop"
+  )
+
+# Wyświetlenie tabeli z wynikami obliczeń
+kable(dane_roczne, caption = "Tabela: Średnia waga (kg) w poszczególnych latach")
+```
+## 3. Wizualizacja
+### Wykers Słupkowy
+```{r}
+ggplot(penguins, aes(x = species, fill = species)) +
+  geom_bar() +
+  labs(
+    title = "Liczebność gatunków pingwinów",
+    x = "Gatunek",
+    y = "Liczba obserwowanych osobników",
+    fill = "Gatunek"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "none") # Ukrywam legendę, bo nazwy są na osi X
+
+```
+Najliczniejszą grupą w zbiorze jest gatunek Adelie (słupek czerwony), liczący ponad 150 osobników. Najmniej licznym gatunkiem jest Chinstrap.  
+
+### Wykres Liniowy
+```{r}
+ggplot(dane_roczne, aes(x = year, y = srednia_waga, color = species)) +
+  geom_line(size = 1.2) +  # Grubsza linia dla czytelności
+  geom_point(size = 3) +   # Punkty oznaczające konkretne lata
+  scale_x_continuous(breaks = c(2007, 2008, 2009)) + # Wymuszenie liczb całkowitych na osi lat(bez 2007.5, 2008.5 itp.)
+  labs(
+    title = "Zmiana średniej wagi w czasie (2007-2009)",
+    x = "Rok",
+    y = "Średnia waga (kg)",
+    color = "Gatunek"
+  ) +
+  theme_minimal()
+```
+Masa ciała pingwinów jest stosunkowo stabilna w czasie. Wyraźnie widać, że gatunek Gentoo (niebieska linia) jest znacznie cięższy od pozostałych (średnio ok. 5 kg), podczas gdy Adelie i Chinstrap ważą średnio poniżej 4 kg.
+
+### Boxplot
+```{r}
+penguins %>%
+  drop_na() %>%
+  ggplot(aes(x = species, y = body_mass_g, fill = species)) +
+  geom_boxplot(alpha = 0.7) +
+  labs(
+    title = "Rozkład masy ciała według gatunków",
+    x = "Gatunek",
+    y = "Masa ciała (g)",
+    fill = "Gatunek"
+  ) +
+  theme_minimal()
+```
+Boxplot potwierdza różnice w wadze. Mediana dla gatunku Gentoo (pozioma kreska wewnątrz niebieskiego pudełka) znajduje się znacznie wyżej niż dla pozostałych. Wysokość czerwonego i zielonego "pudełeka" jest zbliżona, co sugeruje podobne zróżnicowanie wagi.

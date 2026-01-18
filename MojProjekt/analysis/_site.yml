@@ -1,0 +1,25 @@
+name: MojProjekt
+output_dir: ../docs
+navbar:
+  title: MojProjekt
+  left:
+  - text: Home
+    href: index.html
+  - text: CV
+    href: cv.html
+  - text: Analiza Danych
+    href: analiza.html
+  - text: Prezentacja
+    href: prezentacja.html
+  right:
+  - icon: fab fa-github
+    text: Source code
+    href: |-
+      https://github.com/98438-svg
+      /RstudioProjekt
+output:
+  workflowr::wflow_html:
+    toc: yes
+    toc_float: yes
+    theme: cosmo
+    highlight: textmate

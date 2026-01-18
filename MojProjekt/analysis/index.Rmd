@@ -1,0 +1,26 @@
+---
+title: "Strona Główna"
+site: workflowr::wflow_site
+output:
+  workflowr::wflow_html:
+    toc: false
+---
+<div style="display: flex; gap: 20px; align-items: start;">
+
+<div style="width: 60%;">
+### O mnie
+Michał Knopers  
+
+Kierunek: Informatyka i inżynieria danych
+
+
+</div>
+
+<div style="width: 40%;">
+![](COLLEGIUM MAXIMUM.jpg)
+</div>
+
+</div>
+
+<br>
+Strona została wygenerowana przy użyciu pakietu **workflowr**
